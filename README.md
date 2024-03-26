@@ -34,10 +34,10 @@ As a todolist management project this is made using NextJS for frontend. For bac
 
 * Gin framework can be executed using 'go' command installed by go installation. Before executing the project we need to download modules first.
 
-1. Downloading modules.
+1. Download all required modules.
 
     ```bash
-    (env)$ go mod 
+    (env)$ go get .
     ```
 2. Create Table before running server.
 
@@ -55,8 +55,7 @@ As a todolist management project this is made using NextJS for frontend. For bac
 3. Run Server
 
     ```bash
-    (env)$ go get -u github.com/gin-gonic/gin
-    (env)$ go get -u github.com/go-sql-driver/mysql
+    (env)$ go run .
     ```
 
 ## Tips
