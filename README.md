@@ -70,3 +70,22 @@ As a todolist management project this is made using NextJS for frontend. For bac
     By using <strong>strings.Trim</strong> function we need to remove double quote so that the query can be formed as %query% next to LIKE operator.
 
 2. Every function name for export need to be capital form in go.
+
+3. Understanding about array and slice in Go.
+
+    Array and slice are difference in many parts and the most different part is in managing memory.
+    Arrays are located in memory as full size of length but slices use only size of the address of start, length and capacity values. Start meaning is the start address of the slice. You can have deep understanding of array and slice in the blog [Go: Arrays and Slices, a deep dive.](https://dev.to/dawkaka/go-arrays-and-slices-a-deep-dive-dp8#:~:text=What%20this%20means%20is%20that,segment%20of%20an%20underlying%20array.).
+    One more thing need be mentioned for slice is that the capacity of the slice. When we append the slice and the capacity need to be expanded for the first time the slice expands capacity as 2 times of original capacity.
+
+    ```
+    numbers := []int{1, 2, 3, 4} // len: 4, cap: 4
+    numbers = append(numbers, 5) // len: 5, cap: 8
+    ```
+
+    But when expanding more than original capacity then after the values of original capacity the slice expands 2 more for the other values.
+
+    ```
+    numbers := []int{1, 2, 3, 4} // len: 4, cap: 4
+    numbers = append(numbers, 5, 6, 7, 8, 9) // len: 9, cap: 10
+    // Capacity expanded 2 for appending value of 9.
+    ```
